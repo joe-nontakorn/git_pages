@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
-/* html {
-    scroll-behavior: smooth;
-  } */
-
-  body {
-    background-image: url('/me/6938839_3409297.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* ให้ภาพไม่เลื่อนตาม scroll */
+body {
+    @apply bg-white text-black;
   }
   
+
+
+
