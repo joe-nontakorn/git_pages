@@ -42,32 +42,41 @@ html {
   .animate-float5 {
     animation: float5 12s ease-in-out infinite;
   }
+
   .ball {
     position: absolute;
-    border-radius: 9999px;
-    filter: none;
-    opacity: 0.3;
-    z-index: -1;
+    border-radius: 43% 57% 66% 34% / 47% 55% 45% 53%; /* รูปทรงไม่กลม */
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), rgba(255,255,255,0.05)),
+                linear-gradient(145deg, rgba(231, 25, 128, 0.3), rgba(59, 130, 246, 0.3));
+    mix-blend-mode: screen;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.35;
+    animation: blobFloat 12s ease-in-out infinite;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
   }
   
+
   /* ลูกบอลแต่ละลูก */
   .float-ball-1 {
-    width: 160px;
-    height: 160px;
-    background-color: #fb923c;
-    top: 15%;
-    left: 10%;
-    animation: move1 15s ease-in-out infinite;
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 20%;
+    animation: move1 18s ease-in-out infinite;
+    animation-delay: 0s;
   }
   
   .float-ball-2 {
-    width: 200px;
-    height: 200px;
-    background-color: #f97316;
-    top: 65%;
-    left: 20%;
-    animation: move2 18s ease-in-out infinite;
+    width: 160px;
+    height: 160px;
+    top: 40%;
+    left: 75%;
+    animation: move2 20s ease-in-out infinite;
+    animation-delay: 4s;
   }
+  
   
   .float-ball-3 {
     width: 140px;
@@ -121,5 +130,17 @@ html {
     75%  { transform: translate(25px, -10px); }
     100% { transform: translate(0px, 0px); }
   }
+
+  @keyframes blobFloat {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      border-radius: 43% 57% 66% 34% / 47% 55% 45% 53%;
+    }
+    50% {
+      transform: translate(30px, -40px) scale(1.05);
+      border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+    }
+  }
+  
   
   
