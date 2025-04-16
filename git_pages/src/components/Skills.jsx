@@ -25,6 +25,7 @@ function Skills() {
         { name: "Node.js", img: "/icon/icons8-node-js-48.png" },
         { name: "Bun", img: "/icon/Bun.png" },
         { name: "Arduino", img: "/icon/icons8-arduino-48.png" },
+        { name: "ElysiaJS", img: "/icon/ElysiaJS.png" },
       ],
     },
     {
@@ -47,6 +48,8 @@ function Skills() {
         { name: "Post Man", img: "/icon/postman-icon.png" },
         { name: "Ubuntu", img: "/icon/ubuntu-color-icon.png" },
         { name: "Google Cloud", img: "/icon/google-cloud-icon.png" },
+        { name: "Git", img: "/icon/git-icon.png" },
+
       ],
     },
   ];
@@ -54,7 +57,7 @@ function Skills() {
   const whiteBgSkills = ["Linux", "AWS Cloud", "MySQL"];
 
   return (
-    <section id="skills" className="py-10 px-4 bg-white dark:bg-black">
+    <section id="skills" className="scroll-mt-24 ">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         ทักษะของฉัน
       </h2>

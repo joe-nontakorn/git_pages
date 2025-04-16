@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .home-section {
-    @apply pt-24 scroll-mt-24;
+    @apply pt-24 scroll-mt-24 py-10 px-4  scroll-mt-24  ;
 }
 
 .name-h1 {
