@@ -72,7 +72,7 @@ function Skills() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <Card key={idx} title={category.title}>
-              <div className="grid grid-cols-3 gap-4 justify-items-center">
+              <div className="grid grid-cols-4 gap-4 justify-items-center">
                 {category.skills.map((skill, i) => (
                   <div
                     key={i}

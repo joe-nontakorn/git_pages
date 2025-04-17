@@ -36,7 +36,7 @@ function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-10 px-10 scroll-mt-24">
+    <section id="certificates" className=" scroll-mt-24">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         ใบ Certificate ของฉัน
       </h2>

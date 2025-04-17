@@ -8,15 +8,30 @@ import BackgroundBalls from "./components/BackgroundBalls";
 
 function App() {
   return (
-    <div>
-      <Header />
+<div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+<Header />
       <main>
       <BackgroundBalls />
         <Home />
+        <br />
+        <br />
+        <br />
         <About />
+        <br />
+        <br />
+        <br />
         <Skills />
+        <br />
+        <br />
+        <br />
         <Certificates />
+        <br />
+        <br />
+        <br />
         <Contact />
+        <br />
+        <br />
+        <br />
       </main>
       
     </div>

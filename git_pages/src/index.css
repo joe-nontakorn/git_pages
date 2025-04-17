@@ -1,146 +1,65 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ส่วนอื่น ๆ ของ Tailwind เช่น @tailwind base */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.font-8bit {
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  /* background-color: #ffffff; */
+}
+
 html {
     scroll-behavior: smooth;
     
   }
 
-  @keyframes float1 {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-20px) translateX(10px); }
-  }
-  @keyframes float2 {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-30px) translateX(-15px); }
-  }
-  @keyframes float3 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(25px); }
-  }
-  @keyframes float4 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(25px); }
-  }
-
-  @keyframes float5 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(25px); }
-  }
-  
-  
-  /* ใช้กับ Tailwind */
-  .animate-float1 {
-    animation: float1 8s ease-in-out infinite;
-  }
-  .animate-float2 {
-    animation: float2 10s ease-in-out infinite;
-  }
-  .animate-float3 {
-    animation: float3 12s ease-in-out infinite;
-  }
-  .animate-float4 {
-    animation: float4 12s ease-in-out infinite;
-  }
-  .animate-float5 {
-    animation: float5 12s ease-in-out infinite;
-  }
-
-  .ball {
-    position: absolute;
-    border-radius: 43% 57% 66% 34% / 47% 55% 45% 53%; /* รูปทรงไม่กลม */
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), rgba(255,255,255,0.05)),
-                linear-gradient(145deg, rgba(231, 25, 128, 0.3), rgba(59, 130, 246, 0.3));
-    mix-blend-mode: screen;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    opacity: 0.35;
-    animation: blobFloat 12s ease-in-out infinite;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 30px rgba(255,255,255,0.1);
-  }
-  
-
-  /* ลูกบอลแต่ละลูก */
-  .float-ball-1 {
-    width: 120px;
-    height: 120px;
-    top: 10%;
-    left: 20%;
-    animation: move1 18s ease-in-out infinite;
-    animation-delay: 0s;
-  }
-  
-  .float-ball-2 {
-    width: 160px;
-    height: 160px;
-    top: 40%;
-    left: 75%;
-    animation: move2 20s ease-in-out infinite;
-    animation-delay: 4s;
-  }
-  
-  
-  .float-ball-3 {
-    width: 140px;
-    height: 140px;
-    background-color: #fdba74;
-    top: 30%;
-    left: 70%;
-    animation: move3 20s ease-in-out infinite;
-  }
-  
-  .float-ball-4 {
-    width: 120px;
-    height: 120px;
-    background-color: #fbbf24;
-    top: 45%;
-    left: 50%;
-    animation: move2 17s ease-in-out infinite;
-  }
-  
-  .float-ball-5 {
-    width: 180px;
-    height: 180px;
-    background-color: #facc15;
-    top: 80%;
-    left: 75%;
-    animation: move1 19s ease-in-out infinite;
-  }
-  
-  
-  /* เคลื่อนที่ลอยไปมา X/Y แบบวงเบา ๆ */
+  /* BackgroundBalls */
   @keyframes move1 {
     0%   { transform: translate(0px, 0px); }
-    25%  { transform: translate(20px, -30px); }
+    25%  { transform: translate(30px, -40px); }
     50%  { transform: translate(0px, -60px); }
-    75%  { transform: translate(-20px, -30px); }
+    75%  { transform: translate(-30px, -20px); }
     100% { transform: translate(0px, 0px); }
   }
   
   @keyframes move2 {
     0%   { transform: translate(0px, 0px); }
-    25%  { transform: translate(-30px, 20px); }
+    25%  { transform: translate(-30px, 25px); }
     50%  { transform: translate(-60px, 0px); }
-    75%  { transform: translate(-30px, -20px); }
+    75%  { transform: translate(-20px, -30px); }
     100% { transform: translate(0px, 0px); }
   }
   
   @keyframes move3 {
     0%   { transform: translate(0px, 0px); }
     25%  { transform: translate(25px, 20px); }
-    50%  { transform: translate(50px, -20px); }
-    75%  { transform: translate(25px, -10px); }
+    50%  { transform: translate(50px, -30px); }
+    75%  { transform: translate(25px, -15px); }
     100% { transform: translate(0px, 0px); }
   }
-
-  @keyframes blobFloat {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-      border-radius: 43% 57% 66% 34% / 47% 55% 45% 53%;
-    }
-    50% {
-      transform: translate(30px, -40px) scale(1.05);
-      border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
-    }
+  
+  .ball {
+    position: absolute;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)),
+                linear-gradient(145deg, rgba(176, 35, 255, 0.6), rgba(60, 100, 255, 0.6));
+    box-shadow:
+      0 0 40px rgba(176, 35, 255, 0.4),
+      0 0 70px rgba(60, 100, 255, 0.4),
+      inset 0 0 25px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    opacity: 0.75;
+    mix-blend-mode: screen;
+    transition: all 0.3s ease-in-out;
   }
   
   
   
+  
+  /* FloatingBubbles */

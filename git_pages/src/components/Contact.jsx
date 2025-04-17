@@ -33,7 +33,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-10 px-4  text-gray-800 dark:text-white scroll-mt-24">
+    <section id="contact" className=" text-gray-800 dark:text-white scroll-mt-24">
       <h2 className="text-3xl font-bold text-center mb-8">ติดต่อฉัน</h2>
 
       {/* ข้อมูลติดต่อ */}
