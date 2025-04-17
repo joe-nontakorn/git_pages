@@ -4,7 +4,7 @@ import "../assets/styles/Home.css";
 import Card from "./Card";
 
 function Home() {
-  const fullText = "   Hi I'm Nontakorn Khanaphol";
+  const fullText = "  hello world!";
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
@@ -34,7 +34,7 @@ function Home() {
           _
         </span>
       </h1>{" "}
-      <p className="dev-p">Dev / IT Engineer</p>
+      {/* <p className="dev-p">Dev / IT Engineer</p> */}
       <br />
       {/* 🔧 Container กำหนด layout แนวนอน */}
       <div className="flex flex-col md:flex-row gap-6 justify-center items-start">
@@ -51,7 +51,7 @@ function Home() {
               />
             </div>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              นนทกร คณะพล
+              Nontakotn Khanaphol
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mt-1">
               Dev / IT Engineer
