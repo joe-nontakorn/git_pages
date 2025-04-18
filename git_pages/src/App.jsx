@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import BackgroundBalls from "./components/BackgroundBalls";
+import MistOverlay from "./components/MistOverlay";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
 <Header />
       <main>
       <BackgroundBalls />
+      <MistOverlay /> {/* ✅ หมอกขาวบางๆ ด้านหน้า ball */}
+
         <Home />
         <br />
         <br />

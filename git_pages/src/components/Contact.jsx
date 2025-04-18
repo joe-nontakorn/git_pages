@@ -1,28 +1,19 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Card from "./Card";
 
 function Contact() {
   const form = useRef();
-//   const [sent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_l4qrhcj",     // 👈 ใส่ของคุณ
-        "template_wqf05yc",    // 👈 ใส่ของคุณ
-        form.current,
-        "_h91faZIPzhNjdv6i"      // 👈 ใส่ของคุณ
-      )
+      .sendForm("service_l4qrhcj", "template_wqf05yc", form.current, "_h91faZIPzhNjdv6i")
       .then(
         (result) => {
           console.log("✅ Email sent:", result.text);
-  
-          // ✅ แสดง alert
           alert("ส่งข้อความเรียบร้อยแล้ว ขอบคุณที่ติดต่อ!");
-  
-          // ✅ เคลียร์ค่าทั้งหมดในฟอร์ม
           form.current.reset();
         },
         (error) => {
@@ -33,19 +24,34 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className=" text-gray-800 dark:text-white scroll-mt-24">
-      <h2 className="text-3xl font-bold text-center mb-8">ติดต่อฉัน</h2>
+    <section id="contact" className="scroll-mt-24 text-white">
+  <h2 className="text-3xl font-bold text-center mb-10">Get in Touch with Me!</h2>
 
-      {/* ข้อมูลติดต่อ */}
-      <div className="max-w-2xl mx-auto mb-8 text-center space-y-2">
-        <p>👤 <strong>นนกร คณะพล</strong></p>
-        <p>📞 <strong>090-931-9022</strong></p>
-        <p>📧 <strong>nontakorn.joe91@gmail.com</strong></p>
+  <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto">
+    {/* 📍 Card ซ้าย */}
+    <Card className="w-[300px] h-[550px] bg-gray-900 p-6">
+      <div className="space-y-6 text-white">
+        <div>
+          <p className="text-orange-500 text-xl">📍</p>
+          <h3 className="font-semibold text-lg">Our Office:</h3>
+          <p>Bangkok, Thailand</p>
+        </div>
+        <div>
+          <p className="text-orange-500 text-xl">📞</p>
+          <h3 className="font-semibold text-lg">Contact Number:</h3>
+          <p>090-9319022</p>
+        </div>
+        <div>
+          <p className="text-orange-500 text-xl">✉️</p>
+          <h3 className="font-semibold text-lg">Email Us:</h3>
+          <p>nontakorn.joe91@gmail.com</p>
+        </div>
       </div>
+    </Card>
 
-      <form ref={form} onSubmit={sendEmail} className="max-w-2xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4">
-
-        {/* ⏰ Hidden field สำหรับเวลา */}
+    {/* 📬 Card ขวา */}
+    <Card className="flex-1 h-[550px] bg-gray-700 p-6">
+      <form ref={form} onSubmit={sendEmail} className="space-y-4">
         <input
           type="hidden"
           name="time"
@@ -55,52 +61,54 @@ function Contact() {
           })}
         />
 
-        {/* 👤 ชื่อ */}
-        <div>
-          <label htmlFor="user_name" className="block mb-1 font-medium">ชื่อ</label>
-          <input
-            type="text"
-            id="user_name"
-            name="user_name"
-            required
-            className="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700"
-          />
+        {/* Full Name & Email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block mb-1 font-medium">Full Name</label>
+            <input
+              type="text"
+              name="user_name"
+              required
+              placeholder="Steve Milner"
+              className="w-full p-3 rounded bg-white text-black"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-medium">Email Address</label>
+            <input
+              type="email"
+              name="user_email"
+              required
+              placeholder="hello@websitename.com"
+              className="w-full p-3 rounded bg-white text-black"
+            />
+          </div>
         </div>
 
-        {/* 📧 อีเมล */}
+        {/* Message */}
         <div>
-          <label htmlFor="user_email" className="block mb-1 font-medium">อีเมล</label>
-          <input
-            type="email"
-            id="user_email"
-            name="user_email"
-            required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            className="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700"
-          />
-        </div>
-
-        {/* 💬 ข้อความ */}
-        <div>
-          <label htmlFor="message" className="block mb-1 font-medium">ข้อความ</label>
+          <label className="block mb-1 font-medium">Your Message</label>
           <textarea
-            id="message"
             name="message"
             rows="4"
+            placeholder="Write Your message"
+            className="w-full p-3 rounded bg-white text-black"
             required
-            className="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700"
-          />
+          ></textarea>
         </div>
 
-        {/* 🚀 ปุ่มส่ง */}
+        {/* Submit */}
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+          className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition"
         >
-          ส่งข้อความ
+          Send Me Message ✉️
         </button>
       </form>
-    </section>
+    </Card>
+  </div>
+</section>
+
   );
 }
 
